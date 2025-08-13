@@ -1,0 +1,62 @@
+$backGroundCL:#0a0a0a;
+
+@mixin Column{
+  display: flex;
+  flex-direction: column;
+}
+@mixin ActiveMedia{
+  background-color: #212121;
+  border-radius: 6px;
+  padding: 1rem;
+  font-size: 35px;
+  color: #CCC;
+  cursor: pointer;
+  transition: all .3s ease
+}
+.header{
+  @include Column();
+  height: 89vh;
+  width: 60px;
+  background-color: $backGroundCL;
+  border-radius: 25px;
+  padding: 2rem;
+  margin: 2rem;
+  justify-content: space-between;
+  .header__nav{
+    .nav__list{
+      @include Column();
+      align-items: center;
+      gap: 40px;
+      .list__logo{
+        font-size: 50px;
+        background-color: #171616;
+        border-radius: 6px;
+        padding: 1rem;
+        color: #FFF;
+        cursor: pointer;
+      }
+      .list__item{
+        font-size: 35px;
+        color: #CCC;
+        cursor: pointer;
+      }
+      .list__item__active{
+        @include ActiveMedia();
+      }
+    }
+  }
+  .header__under{
+    @include Column();
+    align-items: center;
+    gap: 20px;
+    .under__media{
+      padding: 10px;
+      font-size: 35px;
+      color: #CCC;
+      cursor: pointer;
+    }
+    .under__media__active{
+      @include ActiveMedia();
+    }
+  }
+}
